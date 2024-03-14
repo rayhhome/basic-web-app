@@ -11,6 +11,9 @@ export default function QueryProcessor(query: string): string {
       "Your Andrew ID is andrewc."
     )
   }
-
-  return "";
+  else if (query.toLowerCase().includes("your name")) {
+    return (
+      "My name is rayhello0."
+    )
+  }
 }
