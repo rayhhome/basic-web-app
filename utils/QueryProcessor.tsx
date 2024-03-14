@@ -48,6 +48,15 @@ export default function QueryProcessor(query: string): string {
       )
     }
   }
+  else if (query.toLowerCase().includes("multiplied")) {
+    const words = query.toLowerCase().split(" ");
+    const int1 = parseInt(words[2]);
+    const secondintwithbang = words[5].split("?");
+    const int2 = parseInt(secondintwithbang[0]);
+    return (
+      (int1 * int2).toString()
+    )
+  }
   else {
     return "";
   }
