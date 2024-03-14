@@ -26,6 +26,30 @@ export default function QueryProcessor(query: string): string {
       (int1 + int2).toString()
     )
   }
+  else if (query.toLowerCase().includes("largest")) {
+    const sections = query.toLowerCase().split(",");
+    const words = sections[1].split(" ");
+    const int1 = parseInt(words[8]);
+    const int2 = parseInt(sections[1]);
+    const thirdintwithbang = sections[2].split("?");
+    const int3 = parseInt(thirdintwithbang[0]);
+    console.log(int1, int2, int3);
+    if (int1 > int2 && int1 > int3) {
+      return (
+        int1.toString()
+      )
+    }
+    else if (int2 > int1 && int2 > int3) {
+      return (
+        int2.toString()
+      )
+    }
+    else {
+      return (
+        int3.toString()
+      )
+    }
+  }
   else {
     return "";
   }

@@ -35,4 +35,16 @@ describe("QueryProcessor", () => {
         const response: string = QueryProcessor(query);
         expect(response).toBe("5");
     });
+
+    test('should return largest number 1', () => {
+        const query = "Which of the following numbers is the largest: 34, 54, 99?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("99");
+    });
+
+    test('should return largest number 2', () => {
+        const query = "Which of the following numbers is the largest: 34, 54, 9?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("54");
+    });
 });
