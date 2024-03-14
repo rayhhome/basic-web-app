@@ -16,4 +16,7 @@ export default function QueryProcessor(query: string): string {
       "My name is rayhello0."
     )
   }
+  else {
+    return "";
+  }
 }
