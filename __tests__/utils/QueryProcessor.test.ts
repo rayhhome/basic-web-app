@@ -84,6 +84,18 @@ describe("QueryProcessor", () => {
         expect(response).toBe("20");
     });
 
+    test('should return power 1', () => {
+        const query = "What is 2 to the power of 3?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("8");
+    });
+
+    test('should return power 2', () => {
+        const query = "What is 4 to the power of 5?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("1024");
+    });
+
     test('should return square and cube 1', () => {
         const query = "Which of the following numbers is both a square and a cube: 2060, 1600, 64, 3600, 435, 2668, 2197?";
         const response: string = QueryProcessor(query);
@@ -102,6 +114,8 @@ describe("QueryProcessor", () => {
         const response: string = QueryProcessor(query);
         expect(response).toBe("64");
     });
+
+    
 
 
 });

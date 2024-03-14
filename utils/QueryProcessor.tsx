@@ -47,6 +47,15 @@ export default function QueryProcessor(query: string): string {
       (int1 - int2).toString()
     )
   }
+  else if (query.toLowerCase().includes("power")) {
+    const words = query.toLowerCase().split(" ");
+    const int1 = parseInt(words[2]);
+    const secondintwithbang = words[7].split("?");
+    const int2 = parseInt(secondintwithbang[0]);
+    return (
+      (Math.pow(int1, int2)).toString()
+    )
+  }
   else if (query.toLowerCase().includes("largest")) {
     const sections = query.toLowerCase().split(",");
     const words = sections[0].split(" ");
