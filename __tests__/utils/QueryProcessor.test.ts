@@ -36,6 +36,18 @@ describe("QueryProcessor", () => {
         expect(response).toBe("5");
     });
 
+    test('should return difference 1', () => {
+        const query = "what is 3 minus 1?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("2");
+    });
+
+    test('should return difference 2', () => {
+        const query = "what is 5 minus 3?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("2");
+    });
+
     test('should return largest number 1', () => {
         const query = "Which of the following numbers is the largest: 34, 54, 99?";
         const response: string = QueryProcessor(query);
@@ -60,9 +72,24 @@ describe("QueryProcessor", () => {
         expect(response).toBe("20");
     });
 
-    test('should return square and cube', () => {
+    test('should return square and cube 1', () => {
         const query = "Which of the following numbers is both a square and a cube: 2060, 1600, 64, 3600, 435, 2668, 2197?";
         const response: string = QueryProcessor(query);
         expect(response).toBe("64");
     });
+
+    test('should return square and cube 2', () => {
+        const query = "Which of the following numbers is both a square and a cube: 576, 4913, 2362, 361, 729, 3007, 645?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("729");
+    });
+
+
+    test('should return square and cube32', () => {
+        const query = "Which of the following numbers is both a square and a cube: 4058, 3935, 4181, 2116, 64, 1832, 4096?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("64");
+    });
+
+
 });

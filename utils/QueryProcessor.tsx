@@ -25,6 +25,15 @@ export default function QueryProcessor(query: string): string {
       (int1 + int2).toString()
     )
   }
+  else if (query.toLowerCase().includes("minus")) {
+    const words = query.toLowerCase().split(" ");
+    const int1 = parseInt(words[2]);
+    const secondintwithbang = words[4].split("?");
+    const int2 = parseInt(secondintwithbang[0]);
+    return (
+      (int1 - int2).toString()
+    )
+  }
   else if (query.toLowerCase().includes("largest")) {
     const sections = query.toLowerCase().split(",");
     const words = sections[0].split(" ");
@@ -76,35 +85,31 @@ export default function QueryProcessor(query: string): string {
     const seventhintwithbang = setions[6].split("?");
     const int7 = parseInt(seventhintwithbang[0]);
 
+    let result = "";
     if (isSquare(int1) && isCube(int1)) {
-      return (
-        int1.toString()
-      )
+      result += int1.toString();
+      result += ", ";
     } else if (isSquare(int2) && isCube(int2)) {
-      return (
-        int2.toString()
-      )
+      result += int2.toString();
+      result += ", ";
     } else if (isSquare(int3) && isCube(int3)) {
-      return (
-        int3.toString()
-      )
+      result += int3.toString();
+      result += ", ";
     } else if (isSquare(int4) && isCube(int4)) {
-      return (
-        int4.toString()
-      )
+      result += int4.toString();
+      result += ", ";
     } else if (isSquare(int5) && isCube(int5)) {
-      return (
-        int5.toString()
-      )
+      result += int5.toString();
+      result += ", ";
     } else if (isSquare(int6) && isCube(int6)) {
-      return (
-        int6.toString()
-      )
+      result += int6.toString();
+      result += ", ";
     } else {
-      return (
-        int7.toString()
-      )
+      result += int7.toString();
+      result += ", ";
     }
+
+    return result.substring(0, result.length - 2);
 
   }
   else {
