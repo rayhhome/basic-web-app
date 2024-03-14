@@ -17,6 +17,19 @@ export default function QueryProcessor(query: string): string {
     )
   }
   else if (query.toLowerCase().includes("plus")) {
+    const querystring = query.toLowerCase();
+    // https://stackoverflow.com/questions/881085/count-the-number-of-occurrences-of-a-character-in-a-string-in-javascript
+    const count = (querystring.match(/plus/g) || []).length;
+    if (count === 2) {
+      const words = querystring.split(" ");
+      const int1 = parseInt(words[2]);
+      const int2 = parseInt(words[4]);
+      const thirdintwithbang = words[6].split("?");
+      const int3 = parseInt(thirdintwithbang[0]);
+      return (
+        (int1 + int2 + int3).toString()
+      )
+    }
     const words = query.toLowerCase().split(" ");
     const int1 = parseInt(words[2]);
     const secondintwithbang = words[4].split("?");

@@ -36,6 +36,18 @@ describe("QueryProcessor", () => {
         expect(response).toBe("5");
     });
 
+    test('should return larger sum 1', () => {
+        const query = "what is 2 plus 3 plus 4?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("9");
+    });
+
+    test('should return larger sum 2', () => {
+        const query = "what is 3 plus 4 plus 5?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("12");
+    });
+
     test('should return difference 1', () => {
         const query = "what is 3 minus 1?";
         const response: string = QueryProcessor(query);
