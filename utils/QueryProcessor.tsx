@@ -16,6 +16,16 @@ export default function QueryProcessor(query: string): string {
       "rayhello0"
     )
   }
+  else if (query.toLowerCase().includes("plus")) {
+    const words = query.toLowerCase().split(" ");
+    const int1 = parseInt(words[2]);
+    console.log(words);
+    const secondintwithbang = words[4].split("?");
+    const int2 = parseInt(secondintwithbang[0]);
+    return (
+      (int1 + int2).toString()
+    )
+  }
   else {
     return "";
   }

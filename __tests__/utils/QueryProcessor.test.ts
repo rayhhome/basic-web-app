@@ -24,9 +24,15 @@ describe("QueryProcessor", () => {
         expect(response).toBe("Your Andrew ID is andrewc.");
     });
 
-    test('should return name description', () => {
-        const query = "your name";
+    test('should return sum 1', () => {
+        const query = "what is 1 plus 1?";
         const response: string = QueryProcessor(query);
-        expect(response).toBe("rayhello0");
+        expect(response).toBe("2");
+    });
+
+    test('should return sum 2', () => {
+        const query = "what is 2 plus 3?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("5");
     });
 });
