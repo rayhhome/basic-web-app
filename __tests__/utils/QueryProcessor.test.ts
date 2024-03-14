@@ -53,4 +53,16 @@ describe("QueryProcessor", () => {
         const response: string = QueryProcessor(query);
         expect(response).toBe("6");
     });
+
+    test('should return product 2', () => {
+        const query = "What is 4 multiplied by 5?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("20");
+    });
+
+    test('should return square and cube', () => {
+        const query = "Which of the following numbers is both a square and a cube: 2060, 1600, 64, 3600, 435, 2668, 2197?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("64");
+    });
 });
